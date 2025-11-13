@@ -1,0 +1,78 @@
+
+body { font-family: 'Inter', sans-serif; }
+.font-serif { font-family: 'Playfair Display', serif; }
+
+.page-content,
+.admin-page-content {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.active-page { display: block; }
+
+
+.hero-section {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto-format&fit=crop&w=1974&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.error-message { display: none; }
+.form-message { display: none; transition: all 0.3s ease; }
+
+
+.invalid-field {
+  border-color: #ef4444 !important;           
+  box-shadow: 0 0 0 1px #ef4444;              
+}
+.invalid-field:focus {
+  border-color: #ef4444 !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.5);
+}
+
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-animate > * {
+  animation: heroFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+.hero-animate > *:nth-child(1) { animation-delay: 0.2s; }
+.hero-animate > *:nth-child(2) { animation-delay: 0.4s; }
+.hero-animate > *:nth-child(3) { animation-delay: 0.6s; }
+
+
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+[data-animate="up"] { transform: translateY(30px); }
+[data-animate="left"] { transform: translateX(-30px); }
+[data-animate="right"] { transform: translateX(30px); }
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+
+.lightbox { transition: opacity 0.3s ease-in-out; }
+.lightbox-img { animation: zoomIn 0.3s ease-in-out; }
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+.testimonial-slide {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  min-width: 100%;
+}
